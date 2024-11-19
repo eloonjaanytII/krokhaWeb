@@ -1,0 +1,94 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+  --color-primary: #CB3CFF;
+
+  --color-secondary-darkblue: #101935;
+  --color-secondary-purple: #8951FF;
+  --color-secondary-lightblue: #21C3FC;
+  --color-secondary-cyan: #0E43FB;
+  --color-secondary-yellow: #FDB52A;
+
+  --color-neutral-800: #080F25;
+  --color-neutral-700: #212C4D;
+  --color-neutral-600: #37446B;
+  --color-neutral-500: #7E89AC;
+  --color-neutral-400: #AEB9E1;
+  --color-neutral-300: #D1DBF9;
+  --color-neutral-200: #D9E1FA;
+  --color-neutral-100: #FFF;
+  
+
+  --border-radius-button: 82px;
+  --border-radius-header: 100px;
+
+  --font-family-base: 'Lexend-Regular', sans-serif;
+
+  --transition-duration: 0.3s;
+}
+
+.app__wrapper {
+  margin: 0 auto;
+  display: grid;
+  width: 1440px;
+  grid-template-areas: 
+  "sidebar content";
+  grid-template-columns: 300px 1140px;
+  color: var(--color-neutral-200);
+  background-color: var(--color-neutral-800);
+}
+
+.sidebar__wrapper {
+  grid-area: sidebar;
+  border-right: 0.6px solid #0b1739;
+  padding: 38px 28px 150px 28px;
+}
+
+.content__wrapper {
+  grid-area: content;
+  height: 500px;
+  padding: 35px 47.5px 150px 46.5px;
+}
+
