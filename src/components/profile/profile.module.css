@@ -1,0 +1,9 @@
+.profile__wrapper {
+    display: grid;
+    grid-template-areas: 
+  "header header"
+  "common common"
+  "profile photoStatus"
+  "posts posts";
+  grid-template-columns: 300px 1140px;
+}

@@ -1,0 +1,28 @@
+.common__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+}
+
+.common__item {
+    background-color: #0a1330;
+    max-height: 80px;
+    max-width: 243px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 0.6px solid var(--color-neutral-600);
+}
+
+.common__item h1 {
+    padding-left: 52px;
+    line-height: 18px;
+    font-size: 16px;
+}
+
+.common__item p {
+    padding-left: 52px;
+    line-height: 18px;
+    font-size: 12px;
+    color: var(--color-neutral-400);
+
+}

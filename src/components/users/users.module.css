@@ -1,0 +1,4 @@
+.users__wrapper {
+    display: grid;
+    row-gap: 30px;
+}

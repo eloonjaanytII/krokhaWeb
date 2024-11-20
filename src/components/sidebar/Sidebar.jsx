@@ -1,36 +1,35 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import * as styles from './sidebar.module.css'
 
 const Sidebar = () => {
     return (
-        <div className={styles.sidebar__wrapper}>
-            <div className="styles.sidebar__logo">
-                place for logo
+        <div>
+            <div className="sidebar__logo">
+                KolyanWeb
             </div>
-            <div>
-                <input placeholder="Search for..." />
+            <div className="sidebar__input">
+                <input placeholder="Button is on vacation..." />
             </div>
-            <div>
+            <div className="sidebar__menu">
+                <ul>
+                    <li className="sidebar__link">
+                        <NavLink to='/profile'> Profile </NavLink>
+                    </li>
+                    <li className="sidebar__link">
+                        <NavLink to='/messages'> Messages </NavLink>
+                    </li>
+                    <li className="sidebar__link">
+                        <NavLink to='/settings'> Settings </NavLink>
+                    </li>
+                    <li className="sidebar__link">
+                        <NavLink to='/users'> Users </NavLink>
+                    </li>
+                    <li className="sidebar__link">
+                        <NavLink to='/login'> Login </NavLink>
+                    </li>
+                </ul>
+            </div>
 
-            </div>
-            <ul>
-                <li>
-                    <NavLink to = '/profile'> Profile </NavLink>
-                </li>
-                <li>
-                    <NavLink to = '/messages'> Messages </NavLink>
-                </li>
-                <li>
-                    <NavLink to = '/settings'> Settings </NavLink>
-                </li>
-                <li>
-                    <NavLink to = '/users'> Users </NavLink>
-                </li>
-                <li>
-                    <NavLink to = '/login'> Login </NavLink>
-                </li>
-            </ul>
         </div>
     )
 }

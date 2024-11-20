@@ -42,6 +42,55 @@ table {
 	border-spacing: 0;
 }
 
+@font-face {
+  font-family: 'MonaSans-Medium-100';
+  src: url('./fonts/MonaSans-Medium.woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MonaSans-Medium-200';
+  src: url('./fonts/MonaSans-Medium.woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MonaSans-Bold-400';
+  src: url('./fonts/MonaSans-Bold.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WorkSans-SemiBold';
+  src: url('./fonts/WorkSans-SemiBold.woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WorkSans-Medium';
+  src: url('./fonts/WorkSans-Medium.woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WorkSans-Regular';
+  src: url('./fonts/WorkSans-Regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 :root {
   --color-primary: #CB3CFF;
 
@@ -61,34 +110,244 @@ table {
   --color-neutral-100: #FFF;
   
 
-  --border-radius-button: 82px;
-  --border-radius-header: 100px;
+  --border-radius-button: 4px;
+  --border-radius-common-info: 8px;
+  --border-radius-content: 12px;
 
-  --font-family-base: 'Lexend-Regular', sans-serif;
+  --font-family-base: 'MonaSans-Medium-200', sans-serif;
 
   --transition-duration: 0.3s;
 }
 
+
+
 .app__wrapper {
   margin: 0 auto;
+  height: 1143px;
   display: grid;
-  width: 1440px;
   grid-template-areas: 
   "sidebar content";
-  grid-template-columns: 300px 1140px;
-  color: var(--color-neutral-200);
-  background-color: var(--color-neutral-800);
+
+  color: var(--color-neutral-100);
+  background-color: #091028;
+
+  font-family: var(--font-family-base);
+  font-size: 14px;
+
+  overflow: hidden;
 }
 
 .sidebar__wrapper {
   grid-area: sidebar;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
   border-right: 0.6px solid #0b1739;
   padding: 38px 28px 150px 28px;
 }
 
-.content__wrapper {
-  grid-area: content;
-  height: 500px;
-  padding: 35px 47.5px 150px 46.5px;
+/* Логотип */
+.sidebar__logo {
+  height: 26px;
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+  color: var(--color-neutral-100);
+  padding-bottom: 42px;
 }
 
+/* Поле поиска */
+.sidebar__input{
+  padding-bottom: 29px;
+}
+
+.sidebar__input input{
+  box-sizing: border-box;
+  width: 100%;
+  border: 0.6px solid var(--color-neutral-600);
+  border-radius: var(--border-radius-button);
+  padding: 14px;
+  font-family: 'MonaSans-Medium-100';
+  font-weight: 100;
+  font-size: 14px;
+  background-color: #0a1330;
+}
+
+.sidebar__input input::placeholder {
+  color: #AEB9E1;
+}
+
+/* Меню */
+.sidebar__menu {
+  background-color: #091028;
+}
+
+.sidebar__link a {
+  display: block;
+  padding: 14px 0 14px 14px;
+  text-decoration: none;
+  line-height: 20px;
+  font-size: 14px;
+  border-radius: var(--border-radius-button);
+  color: var(--color-neutral-400);
+}
+
+.sidebar__link a:hover {
+  border-left: 3px solid #8951FF;
+  background-color: #0a1330;
+  /* Фон при наведении */
+  color: #FFFFFF;
+  /* Белый текст при наведении */
+}
+
+.sidebar__link a.active {
+  border-left: 3px solid #8951FF;
+  background-color: #0a1330;
+  /* Активный фон */
+  color: #FFFFFF;
+  /* Белый текст */
+}
+
+.content__wrapper {
+  grid-area: content;
+  margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding: 105px 40px;
+}
+
+.common__wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 30px;
+}
+
+.common__item {
+  display: grid;
+  grid-template-areas:
+  "photo h1"
+  "photo number";
+  grid-template-columns: 50px auto;
+  align-items: center;
+  background-color: #0a1330;
+  max-height: 80px;
+  max-width: 243px;
+  padding: 20px;
+  border-radius: 8px;
+  border: 0.6px solid var(--color-neutral-600);
+}
+
+.common__item img {
+  grid-area: photo;
+  object-fit: cover;
+  align-self: center;
+}
+
+.common__item h1 {
+  grid-area: h1;
+  font-family: 'WorkSans-Medium';
+  line-height: 18px;
+  font-size: 15px;
+}
+
+.common__item p {
+  grid-area: number;
+  font-family: 'WorkSans-Regular';
+  line-height: 18px;
+  font-size: 12px;
+  color: var(--color-neutral-400);
+
+}
+
+
+.users__wrapper {
+  display: grid;
+  row-gap: 30px;
+}
+
+.usersList__wrapper {
+  display: grid;
+  background-color: #0a1330;
+  border: 0.6px solid var(--color-neutral-600);
+  border-radius: 12px;
+  height: 737px;
+  grid-template-rows: auto 1fr
+}
+
+.usersList__header {
+  display: grid;
+  font-family: 'WorkSans-Medium';
+  justify-items: start;
+  align-items: center;
+  padding-left: 35px;
+  font-size: 16px;
+  color: var(--color-neutral-100);
+  height: 69px;
+  border-bottom: 0.6px solid var(--color-neutral-600);
+}
+
+.usersList__table {
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse; /* Убираем двойные линии между ячейками */
+  margin-top: 0;
+  font-size: 14px; 
+  color: var(--color-neutral-100);
+  background-color: #0a1330;
+}
+
+.usersList__table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.usersList__table thead th {
+  font-size: 12px;
+  padding: 16px 66px; /* Внутренний отступ для заголовков столбцов */
+  text-align: center;
+  font-family: 'MonaSans-Medium-200';
+}
+
+.usersList__table thead th img {
+  height: 13px;
+  padding-right: 3px;
+}
+
+
+.usersList__table tbody tr:nth-child(even) {
+  background-color: #0e193b; /* Цвет для нечётных строк */
+}
+
+.usersList__table tbody tr:nth-child(odd) {
+  background-color: #091028; /* Цвет для чётных строк */
+}
+
+
+.usersList__table tbody tr {
+  padding: 16px 53px 16px 34px; /* Внутренние отступы для ячеек */
+}
+
+.usersList__table tbody td {
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: var(--color-neutral-400);
+}
+
+.usersList__table tbody tr:hover {
+  cursor: pointer; /* Указатель в виде руки */
+}
+
+
+.user-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  opacity: 80%;
+}

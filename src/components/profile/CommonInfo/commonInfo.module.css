@@ -1,0 +1,4 @@
+.common__wrapper {
+    grid-area: "common";
+    background-color: blue;
+}

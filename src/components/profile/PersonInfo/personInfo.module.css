@@ -1,0 +1,4 @@
+.personInfo__wrapper {
+    grid-area: "profile";
+    background-color: brown;
+}
